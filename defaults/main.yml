@@ -1,5 +1,5 @@
 ---
-cortex_version: 1.7.0
+cortex_version: 1.14.1
 cortex_all_in_one: true
 
 cortex_web_listen_address: "0.0.0.0:9009"
@@ -81,18 +81,20 @@ cortex_frontend_worker:
 cortex_ruler:
   enable_api: true
   enable_sharding: false
-  storage:
-    type: local
-    local:
-      directory: "{{ cortex_config_dir }}/rules"
+
+cortex_ruler_storage:
+  local:
+    directory: "{{ cortex_config_dir }}/rules"
+
+cortex_alertmanager_storage:
+  local:
+    directory: "{{ cortex_config_dir }}/alertmanager"
 
 cortex_api: {}
 
 cortex_querier: {}
 
 cortex_flusher: {}
-
-cortex_chunk_store: {}
 
 cortex_schema: {}
 
@@ -104,11 +106,7 @@ cortex_frontend: {}
 
 cortex_query_range: {}
 
-cortex_table_manager: {}
-
 cortex_store_gateway: {}
-
-cortex_purger: {}
 
 cortex_configs: {}
 

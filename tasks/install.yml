@@ -34,6 +34,7 @@
   with_items:
     - "{{ cortex_config_dir }}"
     - "{{ cortex_config_dir }}/rules"
+    - "{{ cortex_config_dir }}/alertmanager"
 
 - block:
     - name: download cortex binary and install it
